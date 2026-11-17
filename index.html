@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="An interdisciplinary research group at Stanford University studying the foundations of black-box AI oversight and evaluation.">
-  <title>Black Box AI Oversight — Stanford University</title>
+  <title>AI Oversight — Stanford University</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20color%3D%22%23203c32%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%228%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M19%209H9V19M45%209H55V19M55%2045V55H45M19%2055H9V45%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2221%22%20y%3D%2221%22%20width%3D%2222%22%20height%3D%2222%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E">
   <style>
     :root {
@@ -56,8 +56,17 @@
     .research-topic { padding-top: 14px; border-top: 1px solid var(--line); }
     .research-topic h3 { margin-bottom: 7px; }
 
-    #people { padding-top: 30px; border-top: 1px solid var(--line); }
-    #people h2 { margin-bottom: 23px; }
+    .publications { margin-top: 30px; }
+    .publications > h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
+    .publication-list { list-style: none; margin: 0; padding: 0; }
+    .publication { border-top: 1px solid var(--line); padding-top: 17px; }
+    .publication-list li + li { margin-top: 20px; }
+    .publication h4 { margin: 0 0 5px; color: var(--ink); font-size: 17px; line-height: 1.45; font-weight: 500; }
+    .publication-authors { font-size: 14px; line-height: 1.65; }
+    .publication-meta { margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+    #people, #students { padding-top: 30px; border-top: 1px solid var(--line); }
+    #people h2, #students h2 { margin-bottom: 23px; }
     .people-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 23px; }
     .person { min-width: 0; }
     .person-photo { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; margin-bottom: 13px; }
@@ -118,7 +127,7 @@
       .research-topics { grid-template-columns: 1fr; gap: 18px; margin-top: 20px; }
       .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 27px 21px; }
       .person h3 { font-size: 15px; }
-      #people { padding-top: 26px; }
+      #people, #students { padding-top: 26px; }
       .person-title { font-size: 11px; }
       footer { align-items: start; font-size: 10px; }
     }
@@ -137,7 +146,7 @@
     <header id="home">
       <div class="masthead">
         <div class="project-title"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" fill="none"><path d="M19 9H9V19M45 9H55V19M55 45V55H45M19 55H9V45" fill="none" stroke="currentColor" stroke-width="3"/>
-      <rect x="21" y="21" width="22" height="22" fill="currentColor"/></svg><div class="title-copy"><h1>Black Box AI Oversight</h1><p class="project-subtitle">A Stanford Research Collaboration on Adaptive Monitoring, Auditing, and Intervention Policies for Black-Box AI Systems.</p></div></div>
+      <rect x="21" y="21" width="22" height="22" fill="currentColor"/></svg><div class="title-copy"><h1>AI Oversight</h1><p class="project-subtitle">A Stanford Research Collaboration on Adaptive Monitoring, Auditing, and Intervention Policies for Black-Box AI Systems.</p></div></div>
         <p class="university"><a href="https://www.stanford.edu/">Stanford University</a></p>
       </div>
     </header>
@@ -145,16 +154,35 @@
     <main id="main">
       <section id="overview" aria-labelledby="overview-title">
         <h2 id="overview-title">About the project</h2>
-        <p><strong>Black Box AI Oversight</strong> is an interdisciplinary research group effort at Stanford University developing scientific foundations and open-source software for the oversight of agentic AI systems.</p>
+        <p><strong>AI Oversight</strong> is an interdisciplinary research group effort at Stanford University developing scientific foundations and open-source software for the oversight of agentic AI systems.</p>
       </section>
 
       <section id="research" aria-labelledby="research-title">
         <h2 id="research-title">Research</h2>
-        <p class="research-intro">Our research combines statistics, machine learning, reinforcement learning, and causal inference to study AI reliability and develop methods to audit, monitor, and intervene in AI systems. We aim to enable safe deployment and align system behavior with user preferences and stated guardrails.</p>
+        <p class="research-intro">Our research combines statistics, machine learning, reinforcement learning, incentive design, and causal inference to study AI reliability and develop methods to audit, monitor, and intervene in AI systems. We aim to enable safe deployment and align system behavior with user preferences and stated guardrails.</p>
         <div class="research-topics">
           <article class="research-topic"><h3>AI evaluation</h3><p>Assessing the behavior and reliability of AI systems.</p></article>
           <article class="research-topic"><h3>Human oversight</h3><p>Selective human intervention to support safe deployment and alignment with user preferences and institutional requirements.</p></article>
           <article class="research-topic"><h3>Responsible deployment</h3><p>Developing safety contracts for the deployment and use of AI systems.</p></article>
+        </div>
+        <div class="publications" aria-labelledby="papers-title">
+          <h3 id="papers-title">Papers</h3>
+          <ul class="publication-list">
+            <li>
+              <article class="publication">
+                <h4><a href="https://arxiv.org/abs/2611.09792">Knowing When to Intervene: Causal Evaluation of AI Agents</a></h4>
+                <p class="publication-authors">Ayush Sawarni, Wenqian Xing, Tijana Zrnic, Ramesh Johari, Vasilis Syrgkanis</p>
+                <p class="publication-meta">2026 &middot; <a href="https://arxiv.org/abs/2611.09792" aria-label="arXiv abstract for Knowing When to Intervene: Causal Evaluation of AI Agents">arXiv</a> &middot; <a href="https://arxiv.org/pdf/2611.09792" aria-label="PDF of Knowing When to Intervene: Causal Evaluation of AI Agents">PDF</a></p>
+              </article>
+            </li>
+            <li>
+              <article class="publication">
+                <h4><a href="https://arxiv.org/abs/2610.31662">Reliable AI-Assisted Decisions via Selective Auditing</a></h4>
+                <p class="publication-authors">Isaac Gibbs, Elise L. Han, Ryan J. Tibshirani, Tijana Zrnic</p>
+                <p class="publication-meta">2026 &middot; <a href="https://arxiv.org/abs/2610.31662" aria-label="arXiv abstract for Reliable AI-Assisted Decisions via Selective Auditing">arXiv</a> &middot; <a href="https://arxiv.org/pdf/2610.31662" aria-label="PDF of Reliable AI-Assisted Decisions via Selective Auditing">PDF</a></p>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -204,12 +232,33 @@
         </div>
       </section>
 
+      <section id="students" aria-labelledby="students-title">
+        <h2 id="students-title">PhD Students and Postdocs</h2>
+        <div class="people-grid">
+          <article class="person">
+            <img class="person-photo" src="assets/people/ayush-sawarni.jpg" alt="Ayush Sawarni" width="350" height="350" loading="lazy" decoding="async">
+            <h3><a href="https://sawarniayush.github.io/">Ayush Sawarni</a></h3>
+            <p class="person-title"><strong>PhD Student</strong>Operations Research</p>
+          </article>
+          <article class="person">
+            <img class="person-photo" src="assets/people/wenqian-xing.jpg" alt="Wenqian Xing" width="350" height="350" loading="lazy" decoding="async">
+            <h3><a href="https://wenqian-xing.github.io/">Wenqian Xing</a></h3>
+            <p class="person-title"><strong>PhD Student</strong>Operations Research</p>
+          </article>
+          <article class="person">
+            <img class="person-photo" src="assets/people/chris-hays.jpg" alt="Chris Hays" width="350" height="350" loading="lazy" decoding="async">
+            <h3><a href="https://johnchrishays.com/">Chris Hays</a></h3>
+            <p class="person-title"><strong>Postdoctoral Scholar</strong>Statistics</p>
+          </article>
+        </div>
+      </section>
+
       <section id="contact" aria-labelledby="contact-title">
         <h2 id="contact-title">Contact</h2>
         <p>For questions about the project or research collaboration, email <a href="mailto:aioversight@lists.stanford.edu">aioversight@lists.stanford.edu</a>.</p>
       </section>
     </main>
-    <footer><span>Black Box AI Oversight · Stanford University</span></footer>
+    <footer><span>AI Oversight · Stanford University</span></footer>
   </div>
 </body>
 </html>
